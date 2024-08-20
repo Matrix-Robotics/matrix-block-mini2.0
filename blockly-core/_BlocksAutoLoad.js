@@ -1,6 +1,6 @@
-const blocks_dir = "../blockly-core/blocks/";
-const blocks_picker_dir = "../blockly-core/blocks/picker/";
-const generator_dir = "../blockly-core/generator/";
+const blocks_dir = "./matrix-block-mini2.0/blockly-core/blocks/";
+const blocks_picker_dir = "./matrix-block-mini2.0/blockly-core/blocks/picker/";
+const generator_dir = "./matrix-block-mini2.0/blockly-core/generator/";
 
 const Files = [
   "_mini",
