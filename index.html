@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>MATRIXblock</title>
+  <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+  <!--Plugins-->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/plugins/sweetalert2/sweetalert2-bootstrap-4.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/driver.js/1.3.1/driver.min.css" />
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.0/sweetalert2.all.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/driver.js/1.3.1/driver.min.js.iife.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.49.0/min/vs/loader.min.js"></script>
+
+  <!--_Toolbox.xml Loading, blocking process to make sure XML loaded before Blockly init-->
+  <script>
+    $.ajax({
+      url: "./blockly-core/_Toolbox.xml",
+      type: "GET",
+      dataType: "text",
+      async: false, // blocking process
+      success: function (data) {
+        $("head").append(data);
+      },
+      error: function () {
+        alert("Failed to Load Blockly ToolBox XML!");
+      },
+    });
+  </script>
+
+  <!--Blockly Core-->
+  <script src="./blockly-core/blockly.js"></script>
+  <script src="./blockly-core/vertical_extensions.js"></script>
+  <script src="./blockly-core/msg/scratch_msgs.js"></script>
+
+  <!--App Style-->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+  <!--Blocks and Generators Auto Loading-->
+  <script src="./blockly-core/arduino.js"></script>
+  <script src="./blockly-core/_BlocksAutoLoad.js"></script>
+</head>
+
+<!-- MyBlock Procedure Modal -->
+<div class="modal" id="myBlock_modal" tabindex="-1" data-bs-backdrop='static' data-bs-focus='false' data-bs-keyboard='false'>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">My Block Builder</h5>
+        <button type="button" id="myblock_closeIcon" class="btn-close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="myBlock_modal-workspace" id="editor-block-workspace"></div>
+        <div class="myBlock_modal-btns">
+          <div class="myBlock_modal-btn" id="myblock_add0">
+            <img class="myBlock_modal-btn-img" src="./assets/img/icon--text-input.svg" alt="" />
+            <div id="myblock_addNumBtn" class="myBlock_modal-btn-text">
+              Number Input
+            </div>
+            <!-- 數字輸入 -->
+          </div>
+          <div class="myBlock_modal-btn" id="myblock_add3">
+            <img class="myBlock_modal-btn-img" src="./assets/img/icon--text-input.svg" alt="" />
+            <div id="myblock_addStringBtn" class="myBlock_modal-btn-text">
+              Text Input
+            </div>
+            <!-- 文字輸入 -->
+          </div>
+          <div class="myBlock_modal-btn" id="myblock_add1">
+            <img class="myBlock_modal-btn-img" src="./assets/img/icon--boolean-input.svg" alt="" />
+            <div id="myblock_addBoolBtn" class="myBlock_modal-btn-text">
+              Logic Input
+            </div>
+            <!-- 邏輯輸入 -->
+          </div>
+          <div class="myBlock_modal-btn" id="myblock_add2">
+            <img class="myBlock_modal-btn-img" src="./assets/img/icon--label.svg" alt="" />
+            <div id="myblock_addTagBtn" class="myBlock_modal-btn-text">
+              Add Tag
+            </div>
+            <!-- 增加標籤 -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="myblock_sureAddbtn" class="btn btn-primary">
+          Finish
+        </button>
+        <button type="button" id="myblock_closebtn" class="btn btn-secondary">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--About software Modal -->
+<div class="modal fade" id="about_modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">About Software</h5>
+        <button type="button" id="about_closeIcon" class="btn-close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <img src="./assets/img/logo.png" class="img-fluid">
+          <br>
+          <br>
+        </div>
+        <p class="blockquote-footer">
+          MATRIXblock transforms visual coding into C++ code for students, evolving from Scratch 3 blocks to bridge
+          graphical and text-based programming seamlessly.
+        </p>
+        <hr>
+        <a style="font-size:0.8em;" href="./views/packages_licenses.html" target="_blank"><small>These software may be
+            included in this
+            product.</small></a>
+        <br>
+        <a style="font-size:0.8em;" href="./views/eula.html" target="_blank"><small>By using this software, you agree to
+            these Terms of Use.</small></a>
+        <div class="text-center">
+          <hr>
+          <p style="color: #6c757d; font-size:0.8em;">Copyright © 2024 MATRIX ROBOTICS, All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<body ondragstart="return false">
+  <div class="mainContainer">
+    <nav class="navbar navbar-expand navbar-dark" style="background-color: #005697; z-index: 1049">
+      <div class="container-fluid">
+        <a class="navbar-brand me-0"><img src="./assets/img/nav-logo.png" width="156px" height="53px" /></a>
+        <div class="navbar-nav">
+          <div class="btn-group">
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i
+                  class="bi bi-globe-asia-australia"></i></a>
+              <ul class="dropdown-menu" id="langDropDownMenu">
+                <!-- Append by js -->
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-folder-fill"></i><span id="fileMenu"></span>
+              </a>
+              <ul class="dropdown-menu" id="fileDropDownMenu">
+                <li>
+                  <a class="dropdown-item" id="createNavLink"><i class="bi bi-file-earmark"></i>
+                    <span id="createButton">New File</span></a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="openNavLink"><i class="bi bi-folder2-open"></i>
+                    <span id="openButton">Open File</span></a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="saveNavLink"><i class="bi bi-floppy2-fill"></i>
+                    <span id="saveButton">Save File</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" id="downloadNavLink"
+                    href="https://github.com/Matrix-Robotics/matrix-block-mini2.0/releases/latest" target="_blank">
+                    <i class="bi bi-download"></i><span id="downloadButton">&nbsp; Download Software</span></a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="helpNavLink"><i class="bi bi-question-circle"></i>
+                    <span id="helpButton">Help</span></a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="webNavLink" href="https://www.matrixrobotics.com/" target="_blank">
+                    <i class="bi bi-house"></i><span id="webButton">&nbsp; MATRIX Homepage</span></a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="aboutNavLink"><i class="bi bi-info-circle"></i>
+                    <span id="aboutButton">&nbsp; About</span></a>
+                </li>
+              </ul>
+            </li>
+          </div>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <span id="currPrjsName" class="badge text-bg-light">Project.mbn2</span>
+        </div>
+        <div class="navbar-nav ms-auto" id="boardNav"></div>
+      </div>
+    </nav>
+    <div class="content-Div">
+      <div class="editor-Div">
+        <div class="editor-collapse">
+          <i class="bi bi-arrow-right-short"></i>
+        </div>
+      </div>
+      <div class="editor-slider-bar"></div>
+      <div class="control-Div">
+        <div class="code-Div"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  window.onbeforeunload = function (e) {
+    if (true) return "Please remember to save your changes.";
+  };
+</script>
+
+<!-- App js -->
+<!-- <script type="module" src="./src/app.js"></script> -->
+<!-- <script type="text/javascript" src="./app.bundle.js"></script> -->
+<script type="text/javascript" src="./app.compressed.js"></script>
+
+</html>

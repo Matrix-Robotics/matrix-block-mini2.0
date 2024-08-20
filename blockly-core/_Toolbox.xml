@@ -1,0 +1,291 @@
+<xml id="toolbox" style="display: none">
+	<!-- _mini -->
+	<category name="%{BKY_CATEGORY__MINI}" id="_mini" colour="#0079FF" secondaryColour="#0079FF">
+		<block type="mini_setup"></block>
+		<block type="mini_setRGB">
+			<value name="R"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="G"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="B"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="mini_Mset">
+			<value name="Speed"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+		</block>
+		<block type="mini_RCset">
+			<value name="Angle"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+		</block>
+		<block type="mini_DOset">
+			<value name="HIGHLOW"><shadow type="mini_pins_high_low"></shadow></value>
+		</block>
+		<block type="mini_BTNget"></block>
+		<block type="mini_DIget"></block>
+		<block type="mini_USget"></block>
+		<block type="mini_AIget"></block>
+		<!-- <block type="mini_pins_high_low" id="mini_pins_high_low"></block> -->
+		<!-- <block type="mini_custom_code">
+			<value name="TEXT"><shadow type="text"><field name="TEXT">code here</field></shadow></value>
+		</block>
+		<block type="mini_custom_header">
+			<value name="TEXT"><shadow type="text"><field name="TEXT">header here</field></shadow></value>
+		</block> -->
+	</category>
+	<!-- MINI Serial -->
+	<category name="%{BKY_CATEGORY__MINI_SERIAL}" id="_mini_serial" colour="#ed9979" secondaryColour="#ed9979">
+		<block type="mini_Serial_print">
+			<value name="STRING"><shadow type="text"><field name="TEXT">Hello</field></shadow></value>
+		</block>
+		<block type="mini_Serial_println">
+			<value name="STRING"><shadow type="text"><field name="TEXT">World</field></shadow></value>
+		</block>
+		<block type="mini_Serial_write">
+			<value name="STRING"><shadow type="text"><field name="TEXT">65</field></shadow></value>
+		</block>
+		<block type="mini_Serial_printAXIS">
+			<value name="NUM1"><shadow type="math_number"><field name="NUM">32</field></shadow></value>
+			<value name="NUM2"><shadow type="math_number"><field name="NUM">64</field></shadow></value>
+			<value name="NUM3"><shadow type="math_number"><field name="NUM">128</field></shadow></value>
+			<value name="DELAY"><shadow type="math_number"><field name="NUM">500</field></shadow></value>
+		</block>
+		<block type="mini_Serial_available"></block>
+		<block type="mini_Serial_read"></block>
+	</category>
+	<!-- MINI MJ2 -->
+	<!-- <category name="%{BKY_CATEGORY__MINI_MJ2}" id="_mini_mj2" colour="#3796C8" secondaryColour="#3796C8">
+	</category> -->
+	<!-- MINI Sensors -->
+	<category name="%{BKY_CATEGORY__MINI_SENSORS}" id="_mini_sensors" colour="#5cb1d6" secondaryColour="#5cb1d6">
+		<label text="%{BKY_CATEGORY__MINI_MJ2}"></label>
+		<block type="mini_ps2_begin"></block>
+		<block type="mini_ps2_polling"></block>
+		<block type="mini_ps2_btn"></block>
+		<block type="mini_ps2_joy"></block>
+		<label text="MATRIX Color"></label>
+		<block type="mini_i2c_MXcolor_setGamma"></block>
+		<block type="mini_i2c_MXcolor_getColorNumber"></block>
+		<block type="mini_i2c_MXcolor_getColor"></block>
+		<label text="MATRIX Motion"></label>
+		<!-- <block type="mini_i2c_MXmotion_setFilter"></block> -->
+		<block type="mini_i2c_MXmotion_getAccel"></block>
+		<block type="mini_i2c_MXmotion_getGyro"></block>
+		<block type="mini_i2c_MXmotion_getEULAR"></block>
+		<label text="MATRIX Laser"></label>
+		<block type="mini_i2c_MXlaser_getDistance"></block>
+		<label text="MVision"></label>
+		<block type="mini_mvision_begin"></block>
+		<block type="mini_mvision_read"></block>
+		<block type="mini_mvision_getdata"></block>
+	</category>
+	<!-- MINI Boxs -->
+	<category name="%{BKY_CATEGORY__MINI_BOXS}" id="_mini_boxs" colour="#0033D6" secondaryColour="#0033D6">
+		<block type="mini_i2c_MXmotor_setPWM">
+			<value name="SPEED"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="mini_i2c_MXservo_setAngle">
+			<value name="ANGLE"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<label text="Matrix Motor Controller"></label>
+		<block type="mini_i2c_MXctrl_motorSet">
+			<value name="SPEED"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="mini_i2c_MXctrl_motorRound">
+			<value name="ROUND"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="mini_i2c_MXctrl_motorInvert"></block>
+		<block type="mini_i2c_MXctrl_servoSet">
+			<value name="ANGLE"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+	</category>
+	<!-- MINI 3rd party -->
+	<category name="%{BKY_CATEGORY__MINI_THRDPTY}" id="_mini_thrdpty" colour="#FF6F00" secondaryColour="#FF6F00">
+		<block type="mini_i2c_PIXYcam_pixyinit"></block>
+		<block type="mini_i2c_PIXYcam_getblock"></block>
+		<block type="mini_i2c_PIXYcam_INFO"></block>
+		<block type="mini_i2c_HTcolor_getColorNumber"></block>
+		<block type="mini_i2c_HTcolor_getRed"></block>
+		<block type="mini_i2c_HTcompass_getHeading"></block>
+		<label text="Timer"></label>
+		<block type="mini_timer_reset"></block>
+		<block type="mini_timer_read"></block>
+	</category>
+
+	<!-- Control -->
+	<category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FFAB19" secondaryColour="#CF8B17">
+		<!-- <block type="control_setup" id="control_setup"></block> -->
+		<block type="control_wait" id="control_wait">
+			<value name="TIMES">
+				<shadow type="math_number">
+					<field name="NUM">1000</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="control_if" id="control_if"></block>
+		<block type="control_if_else" id="control_if_else"></block>
+		<block type="control_repeat" id="control_repeat">
+			<value name="TIMES">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="control_forever" id="control_forever"></block>
+		<block type="control_wait_until" id="control_wait_until"></block>
+		<block type="control_repeat_until" id="control_repeat_until"></block>
+		<block type="mini_millis"></block>
+	</category>
+	<!-- Operators -->
+	<category name="%{BKY_CATEGORY_OPERATORS}" id="operators" colour="#40BF4A" secondaryColour="#389438">
+		<block type="mini_map">
+			<value name="VAL"><shadow type="math_number"><field name="NUM">128</field></shadow></value>
+			<value name="frmL"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="frmH"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="toL"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="toH"><shadow type="math_number"><field name="NUM">1023</field></shadow></value>
+		</block>
+		<block type="operator_add" id="operator_add">
+			<value name="NUM1">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="NUM2">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_subtract" id="operator_subtract">
+			<value name="NUM1">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="NUM2">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_multiply" id="operator_multiply">
+			<value name="NUM1">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="NUM2">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_divide" id="operator_divide">
+			<value name="NUM1">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="NUM2">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_random" id="operator_random">
+			<value name="FROM">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="TO">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="mini_randomSeed">
+			<value name="SEED"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="operator_lt" id="operator_lt">
+			<value name="OPERAND1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="OPERAND2"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+		</block>
+		<block type="operator_equals" id="operator_equals">
+			<value name="OPERAND1"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+			<value name="OPERAND2"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+		</block>
+		<block type="operator_gt" id="operator_gt">
+			<value name="OPERAND1"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+			<value name="OPERAND2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="operator_and" id="operator_and"></block>
+		<block type="operator_or" id="operator_or"></block>
+		<block type="operator_not" id="operator_not"></block>
+		<block type="operator_join" id="operator_join">
+			<value name="STRING1">
+				<shadow type="text">
+					<field name="TEXT">hello</field>
+				</shadow>
+			</value>
+			<value name="STRING2">
+				<shadow type="text">
+					<field name="TEXT">world</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_letter_of" id="operator_letter_of">
+			<value name="LETTER">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="STRING">
+				<shadow type="text">
+					<field name="TEXT">world</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_length" id="operator_length">
+			<value name="STRING">
+				<shadow type="text">
+					<field name="TEXT">world</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_toString" id="operator_toString">
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">100</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_mod" id="operator_mod">
+			<value name="NUM1">
+				<shadow type="math_number">
+					<field name="NUM">4</field>
+				</shadow>
+			</value>
+			<value name="NUM2">
+				<shadow type="math_number">
+					<field name="NUM">2</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_round" id="operator_round">
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">1.5</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="operator_mathop" id="operator_mathop">
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">1.5</field>
+				</shadow>
+			</value>
+		</block>
+	</category>
+	
+	<!-- Variables -->
+	<category name="%{BKY_CATEGORY_VARIABLES}" id="data" colour="#FF8C1A" secondaryColour="#DB6E00" custom="VARIABLE"></category>
+	<!-- PROCEDURE -->
+	<category name="%{BKY_CATEGORY_MYBLOCKS}" id="myBlocks" colour="#FF6680" secondaryColour="#FF4D6A" custom="PROCEDURE"></category>
+</xml>
