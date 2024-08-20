@@ -1,5 +1,7 @@
 # MATRIXblock for Mini 2.0
 >**_Visualize Your Code in Action_**
+>
+>Click [Here](https://github.com/Matrix-Robotics/matrix-block-mini2.0/releases/latest) to download latest version software.
 
 ![image](https://github.com/user-attachments/assets/b640e606-f5d1-422b-b032-28030208c1d3)
 
