@@ -383,8 +383,15 @@ Blockly.ScratchMsgs.locales["en"] = {
         CONSOLE_ZOOM: "Full Screen",
         CLOSE_SAVE: "Yes, Save file",
         CLOSE_NOTSAVE: "No, Don't save",
+		
+		DFU_FWUPDATE_SCANDEVS: "1. Scan DFU Decive",
+        DFU_FWUPDATE_SELECTFILE: "2. Select Firmware",
+        DFU_FWUPDATE_RUNFWUPDATE: "3. Update Firmware",
+        DFU_FWUPDATE_HELP: "DFU Device not found?",
+        DFU_FWUPDATE_DOWNLOADFW: "Download Firmware",
     },
     TEXT: {
+        UPLOAD_ING: "Compiling/Uploading...",
         UPLOAD_SUCCESS: "Compile/Upload Successful",
         UPLOAD_FAILED: "Compile/Upload Failed",
         UPLOAD_FAILED_CANT_CREATE_FILE: "Upload Failed, Can not create temp file.",
@@ -403,6 +410,16 @@ Blockly.ScratchMsgs.locales["en"] = {
         UPDATE_TITLE: "Update Available",
         UPDATE_CURR_VER: "Current Ver: ",
         UPDATE_LATEST_VER: "Latest Ver: ",
+		
+		DFU_FWUPDATE: "Firmware Update",
+        DFU_FWUPDATE_SUCCESS: "Firmware update successfully!",
+        DFU_FWUPDATE_FAIL: "Firmware update Fail!",
+        DFU_FWUPDATE_STM32ERR: "STM32 CLI Error: ",
+        DFU_FWUPDATE_DEVNOTSELECT: "DFU device not selected.",
+        DFU_FWUPDATE_FWFILENOTSELECT: "Firmware hex file not selected.",
+
+        VAR_NOT_ALLOW: "Invalid variable name. Only letters, numbers, and underscores are allowed.",
+        DEF_NOT_ALLOW: "Invalid function name. Only letters, numbers, and underscores are allowed.",
     },
     INTRO: {
         TITLE_0: "Welcome!",
@@ -813,8 +830,15 @@ Blockly.ScratchMsgs.locales["zh-cn"] = {
         CONSOLE_ZOOM: "全屏切换",
         CLOSE_SAVE: "是，储存档案",
         CLOSE_NOTSAVE: "否，不要储存",
+		
+		DFU_FWUPDATE_SCANDEVS: "1. 扫描设备 ",
+        DFU_FWUPDATE_SELECTFILE: "2. 选择文件 ",
+        DFU_FWUPDATE_RUNFWUPDATE: "3. 开始更新固件 ",
+        DFU_FWUPDATE_HELP: "找不到DFU设备? ",
+        DFU_FWUPDATE_DOWNLOADFW: "下载固件",
     },
     TEXT: {
+        UPLOAD_ING: "编译/上传中...",
         UPLOAD_SUCCESS: "编译/上传完成",
         UPLOAD_FAILED: "编译/上传失败",
         UPLOAD_FAILED_CANT_CREATE_FILE: "上传失败-无法创建暂存档案",
@@ -833,6 +857,16 @@ Blockly.ScratchMsgs.locales["zh-cn"] = {
         UPDATE_TITLE: "有可用的软件更新",
         UPDATE_CURR_VER: "当前版本: ",
         UPDATE_LATEST_VER: "最新版本: ",
+		
+		DFU_FWUPDATE: "主控固件更新",
+        DFU_FWUPDATE_SUCCESS: "固件更新成功!",
+        DFU_FWUPDATE_FAIL: "固件更新成功失败",
+        DFU_FWUPDATE_STM32ERR: "STM32 CLI Error: ",
+        DFU_FWUPDATE_DEVNOTSELECT: "DFU裝置未選擇!",
+        DFU_FWUPDATE_FWFILENOTSELECT: "固件hex檔案未選擇!",
+
+        VAR_NOT_ALLOW: "变量名称只能包含字母、数字和下划线!",
+        DEF_NOT_ALLOW: "函式名称只能包含字母、数字和下划线!",
     },
     INTRO: {
         TITLE_0: "欢迎使用！",
@@ -1243,8 +1277,15 @@ Blockly.ScratchMsgs.locales["zh-tw"] = {
         CONSOLE_ZOOM: "全螢幕切換",
         CLOSE_SAVE: "是，儲存檔案",
         CLOSE_NOTSAVE: "否，不要儲存",
+		
+		DFU_FWUPDATE_SCANDEVS: "1. 掃描裝置",
+        DFU_FWUPDATE_SELECTFILE: "2. 選擇檔案",
+        DFU_FWUPDATE_RUNFWUPDATE: "3. 開始更新韌體",
+        DFU_FWUPDATE_HELP: "找不到DFU裝置?",
+        DFU_FWUPDATE_DOWNLOADFW: "下載韌體",
     },
     TEXT: {
+        UPLOAD_ING: "編譯/燒錄中...",
         UPLOAD_SUCCESS: "編譯/燒錄成功",
         UPLOAD_FAILED: "編譯/燒錄失敗",
         UPLOAD_FAILED_CANT_CREATE_FILE: "上傳失敗-無法建立暫存檔案",
@@ -1263,6 +1304,16 @@ Blockly.ScratchMsgs.locales["zh-tw"] = {
         UPDATE_TITLE: "有可用的軟體更新",
         UPDATE_CURR_VER: "目前版本: ",
         UPDATE_LATEST_VER: "最新版本: ",
+		
+		DFU_FWUPDATE: "主機韌體更新",
+        DFU_FWUPDATE_SUCCESS: "主機韌體更新成功!",
+        DFU_FWUPDATE_FAIL: "主機韌體更新失敗!",
+        DFU_FWUPDATE_STM32ERR: "STM32 CLI 異常: ",
+        DFU_FWUPDATE_DEVNOTSELECT: "沒有選擇DFU裝置!",
+        DFU_FWUPDATE_FWFILENOTSELECT: "沒有選擇韌體hex檔案!",
+
+        VAR_NOT_ALLOW: "變數名稱僅能包含英文字母、數字、以及底線!",
+        DEF_NOT_ALLOW: "函式名稱僅能包含英文字母、數字、以及底線!",
     },
     INTRO: {
         TITLE_0: "歡迎使用！",

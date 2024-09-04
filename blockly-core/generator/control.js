@@ -51,12 +51,12 @@ Blockly.Arduino['control_repeat'] = function (block) {
 };
 
 Blockly.Arduino['control_wait_until'] = function () {
-	const argument = Blockly.Arduino.valueToCode(this, 'CONDITION', Blockly.Arduino.ORDER_NONE) || 'false';
+	const argument = Blockly.Arduino.valueToCode(this, 'CONDITION', Blockly.Arduino.ORDER_UNARY_POSTFIX) || 'false';
 	return 'while(!' + argument + ');\n';
 };
 
 Blockly.Arduino['control_repeat_until'] = function () {
-	const argument = Blockly.Arduino.valueToCode(this, 'CONDITION', Blockly.Arduino.ORDER_NONE) || 'false';
+	const argument = Blockly.Arduino.valueToCode(this, 'CONDITION', Blockly.Arduino.ORDER_UNARY_POSTFIX) || 'false';
 	const branch = Blockly.Arduino.statementToCode(this, 'SUBSTACK');
 	return 'while(!' + argument + ')\n{\n' + branch + '}\n';
 };

@@ -43,7 +43,8 @@ Blockly.Arduino['operator_random'] = function () {
 Blockly.Arduino['operator_mod'] = function () {
 	const argument1 = Blockly.Arduino.valueToCode(this, 'NUM1', Blockly.Arduino.ORDER_ATOMIC) || '1';
 	const argument2 = Blockly.Arduino.valueToCode(this, 'NUM2', Blockly.Arduino.ORDER_ATOMIC) || '1';
-	const code = `${argument1} % ${argument2}`;
+	// const code = `${argument1} % ${argument2}`;
+	const code = `fmod(${argument1}, ${argument2})`;
 	return [code, Blockly.Arduino.ORDER_MULTIPLICATIVE];
 };
 
@@ -105,12 +106,6 @@ Blockly.Arduino['operator_letter_of'] = function () {
 Blockly.Arduino['operator_length'] = function () {
 	const str = Blockly.Arduino.valueToCode(this, 'STRING', Blockly.Arduino.ORDER_ATOMIC) || '\"\"';
 	const code = `String(${str}).length()`;
-	return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Arduino['operator_round'] = function () {
-	const argument = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC) || '0';
-	const code = `round(${argument})`;
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

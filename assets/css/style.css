@@ -348,6 +348,18 @@ canvas.decorationsOverviewRuler {
     max-height: 48px;
 }
 
+/* CMD Modal Style*/
+.modalCmdOutput {
+    font-size: 0.75rem;
+    white-space: pre-wrap;
+    background-color: rgb(249, 249, 249);
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", "Consolas", "source-code-pro", monospace;
+	text-align: left;
+}
+
 /* Scrollbar Style*/
 ::-webkit-scrollbar {
     width: 5px;
